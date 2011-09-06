@@ -10,7 +10,7 @@ URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	clutter-devel
 BuildRequires:	clutter-gst-devel
 BuildRequires:	clutter-gtk-devel >= 1.0.2
-BuildRequires:	evince-devel
+BuildRequires:	evince-devel >= 3.1.90.1
 BuildRequires:	gjs-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gtk+3-devel
@@ -18,6 +18,8 @@ BuildRequires:	gtk-webkit3-devel
 BuildRequires:	gtksourceview3-devel
 BuildRequires:	intltool
 BuildRequires:	libmusicbrainz3-devel
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 
 #Description from upstream's README.
 %description
@@ -41,7 +43,8 @@ developing applications that use %{name}.
 
 %build
 %configure \
-	--disable-static
+	--disable-static \
+	--disable-silent-rules
 %{__make}
 
 
@@ -51,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libsushi-1.0.la
 
 %find_lang %{name}
 
