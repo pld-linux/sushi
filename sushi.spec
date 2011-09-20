@@ -1,11 +1,11 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
-Version:	0.1.90
+Version:	0.1.92
 Release:	1
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/0.1/%{name}-%{version}.tar.xz
-# Source0-md5:	68b6955eda9983f84b0c6f58ee059901
+# Source0-md5:	e8e8d5a69cc69edb6b0d460eb27981fe
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	clutter-devel
 BuildRequires:	clutter-gst-devel
