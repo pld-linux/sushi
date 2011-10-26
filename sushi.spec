@@ -1,52 +1,60 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
-Version:	0.2.0
+Version:	0.2.1
 Release:	1
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/0.2/%{name}-%{version}.tar.xz
-# Source0-md5:	3aeb521cde217b3c2838a13dbacc230e
+# Source0-md5:	36f79d8dbd46327d6aefc629a4b61723
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
-BuildRequires:	clutter-devel
+BuildRequires:	autoconf >= 2.63
+BuildRequires:	automake >= 1:1.10
+BuildRequires:	clutter-devel >= 1.6.0
 BuildRequires:	clutter-gst-devel
 BuildRequires:	clutter-gtk-devel >= 1.0.2
-BuildRequires:	evince-devel >= 3.1.90.1
-BuildRequires:	gjs-devel
-BuildRequires:	glib2-devel
-BuildRequires:	gtk+3-devel
+BuildRequires:	evince-devel >= 3.2.0
+BuildRequires:	gjs-devel >= 0.8
+BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	gobject-introspection-devel >= 0.10.0
+BuildRequires:	gstreamer-devel
+BuildRequires:	gstreamer-plugins-base-devel
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-webkit3-devel
 BuildRequires:	gtksourceview3-devel
-BuildRequires:	intltool
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libmusicbrainz3-devel
+BuildRequires:	libtool
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-#Description from upstream's README.
 %description
-This is sushi,
-a quick previewer for Nautilus,
-the GNOME desktop file manager.
+This is sushi, a quick previewer for Nautilus, the GNOME desktop file
+manager.
 
-%package        devel
-Summary:	Development files for %{name}
+%package	devel
+Summary:	Development files for sushi
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
-%description    devel
-The %{name}-devel package contains libraries and header files for
-developing applications that use %{name}.
-
+%description	devel
+The sushi-devel package contains libraries and header files for
+developing applications that use sushi.
 
 %prep
 %setup -q
 
-
 %build
+%{__intltoolize}
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-static \
 	--disable-silent-rules
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,10 +66,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post -p /sbin/ldconfig
-
 %postun -p /sbin/ldconfig
-
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -71,13 +80,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libsushi-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libsushi-1.0.so.0
 %{_datadir}/%{name}
-%{_datadir}/dbus-1/services/*
-%{_libdir}/girepository-1.0/*.typelib
+%{_datadir}/dbus-1/services/org.gnome.Sushi.service
+%{_libdir}/girepository-1.0/Sushi-1.0.typelib
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libsushi-1.0.so
-%{_datadir}/gir-1.0/*.gir
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+%attr(755,root,root) %{_libdir}/libsushi-1.0.so
+%{_datadir}/gir-1.0/Sushi-1.0.gir
