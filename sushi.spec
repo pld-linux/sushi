@@ -1,10 +1,10 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
-Version:	0.2.1
+Version:	0.3.91
 Release:	1
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/0.2/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/0.3/%{name}-%{version}.tar.xz
 # Source0-md5:	36f79d8dbd46327d6aefc629a4b61723
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	autoconf >= 2.63
@@ -24,6 +24,7 @@ BuildRequires:	gtksourceview3-devel
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libmusicbrainz3-devel
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,12 +33,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is sushi, a quick previewer for Nautilus, the GNOME desktop file
 manager.
 
-%package	devel
+%package devel
 Summary:	Development files for sushi
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
-%description	devel
+%description devel
 The sushi-devel package contains libraries and header files for
 developing applications that use sushi.
 
