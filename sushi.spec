@@ -1,7 +1,7 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
 Version:	0.2.1
-Release:	1
+Release:	2
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/0.2/%{name}-%{version}.tar.xz
