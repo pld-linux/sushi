@@ -1,11 +1,11 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
-Version:	3.6.1
+Version:	3.8.0
 Release:	1
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	452d3935c3276fe1c61eb5a6cd5df847
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	8efffd6e0da104543e8b1b08bb67b73c
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
@@ -14,12 +14,13 @@ BuildRequires:	clutter-gst-devel
 BuildRequires:	clutter-gtk-devel >= 1.0.2
 BuildRequires:	evince-devel >= 3.2.0
 BuildRequires:	freetype-devel
-BuildRequires:	gjs-devel >= 0.8
+BuildRequires:	gdk-pixbuf2-devel >= 2.23.0
+BuildRequires:	gjs-devel >= 1.34
 BuildRequires:	glib2-devel >= 1:2.30.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gstreamer-devel >= 1.0.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0.0
-BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	gtk-webkit3-devel
 BuildRequires:	gtksourceview3-devel
 BuildRequires:	intltool >= 0.40.0
