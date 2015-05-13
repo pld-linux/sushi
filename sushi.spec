@@ -1,11 +1,11 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
-Version:	3.12.0
+Version:	3.16.0
 Release:	1
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	97bb127c9a66dfc38d72ba6c9f04d33f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	cf0ca87c894029e65b2678ce9daab6ee
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
@@ -20,8 +20,8 @@ BuildRequires:	glib2-devel >= 1:2.30.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gstreamer-devel >= 1.0.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0.0
-BuildRequires:	gtk+3-devel >= 3.4.0
-BuildRequires:	gtk-webkit3-devel
+BuildRequires:	gtk+3-devel >= 3.14.0
+BuildRequires:	gtk-webkit4-devel
 BuildRequires:	gtksourceview3-devel
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libmusicbrainz5-devel
