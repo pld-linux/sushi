@@ -1,17 +1,17 @@
 Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
-Version:	3.18.0
+Version:	3.24.0
 Release:	1
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	3976f71b3970d4ec454fa7436efc9896
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.24/%{name}-%{version}.tar.xz
+# Source0-md5:	2949906da00e9722fe6db8352bf105e5
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	clutter-devel >= 1.12.0
-BuildRequires:	clutter-gst-devel
+BuildRequires:	clutter-gst-devel >= 3.0
 BuildRequires:	clutter-gtk-devel >= 1.0.2
 BuildRequires:	evince-devel >= 3.2.0
 BuildRequires:	freetype-devel
@@ -24,6 +24,7 @@ BuildRequires:	gstreamer-plugins-base-devel >= 1.0.0
 BuildRequires:	gtk+3-devel >= 3.14.0
 BuildRequires:	gtk-webkit4-devel
 BuildRequires:	gtksourceview3-devel
+BuildRequires:	harfbuzz-devel >= 0.9.9
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libmusicbrainz5-devel
 BuildRequires:	libtool
@@ -36,6 +37,7 @@ Requires:	gdk-pixbuf2 >= 2.23.0
 Requires:	gjs >= 1.38.0
 Requires:	glib2 >= 1:2.30.0
 Requires:	gtk+3 >= 3.14.0
+Requires:	harfbuzz >= 0.9.9
 Obsoletes:	sushi-devel < 3.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
