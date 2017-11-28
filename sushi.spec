@@ -2,7 +2,7 @@ Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
 Version:	3.24.0
-Release:	1
+Release:	2
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.24/%{name}-%{version}.tar.xz
