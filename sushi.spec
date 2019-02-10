@@ -1,12 +1,12 @@
 Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
-Version:	3.24.0
-Release:	2
+Version:	3.30.0
+Release:	1
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	2949906da00e9722fe6db8352bf105e5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	c40b9f94795ee8162dc963f62ea4d8c9
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
@@ -87,4 +87,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/sushi/girepository-1.0
 %{_libdir}/sushi/girepository-1.0/Sushi-1.0.typelib
 %{_datadir}/%{name}
-%{_datadir}/dbus-1/services/org.gnome.Sushi.service
+%{_datadir}/dbus-1/services/org.gnome.NautilusPreviewer.service
