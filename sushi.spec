@@ -1,12 +1,12 @@
 Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
-Version:	41.1
+Version:	41.2
 Release:	1
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/sushi/41/%{name}-%{version}.tar.xz
-# Source0-md5:	577a0723daaca66e57a657bca76737cd
+# Source0-md5:	8677318e1620346c3ff481d963e24606
 URL:		https://wiki.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	evince-devel >= 3.2.0
 BuildRequires:	freetype-devel >= 2
