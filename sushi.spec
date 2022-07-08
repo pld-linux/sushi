@@ -1,3 +1,7 @@
+#
+# Conditonal build:
+%bcond_with	libsoup3	# libsoup3 instead lf libsoup 2
+
 Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
@@ -18,8 +22,13 @@ BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gstreamer-devel >= 1.0.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0.0
 BuildRequires:	gtk+3-devel >= 3.22.0
-# or 4.1 (preferred - libsoup3 based)
+%if %{with libsoup3}
+# preferred
+BuildRequires:	gtk-webkit4.1-devel
+%else
 BuildRequires:	gtk-webkit4-devel
+BuildConflicts:	gtk-webkit4.1-devel
+%endif
 BuildRequires:	gtksourceview4-devel >= 4.0.3
 BuildRequires:	harfbuzz-devel >= 0.9.9
 BuildRequires:	libepoxy-devel
