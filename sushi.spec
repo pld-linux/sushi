@@ -1,16 +1,12 @@
-#
-# Conditonal build:
-%bcond_with	libsoup3	# libsoup3 instead lf libsoup 2
-
 Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
-Version:	42.0
+Version:	43.0
 Release:	1
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/sushi/42/%{name}-%{version}.tar.xz
-# Source0-md5:	11633bccdb08ebb25a6ffa6204af5a6c
+Source0:	https://download.gnome.org/sources/sushi/43/%{name}-%{version}.tar.xz
+# Source0-md5:	2ae66b1944b1c0a82ac5d3fece5aab72
 URL:		https://wiki.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	evince-devel >= 3.2.0
 BuildRequires:	freetype-devel >= 2
@@ -22,13 +18,7 @@ BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gstreamer-devel >= 1.0.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0.0
 BuildRequires:	gtk+3-devel >= 3.22.0
-%if %{with libsoup3}
-# preferred
 BuildRequires:	gtk-webkit4.1-devel
-%else
-BuildRequires:	gtk-webkit4-devel
-BuildConflicts:	gtk-webkit4.1-devel
-%endif
 BuildRequires:	gtksourceview4-devel >= 4.0.3
 BuildRequires:	harfbuzz-devel >= 0.9.9
 BuildRequires:	libepoxy-devel
@@ -42,6 +32,7 @@ Requires:	gdk-pixbuf2 >= 2.23.0
 Requires:	gjs >= 1.38.0
 Requires:	glib2 >= 1:2.30.0
 Requires:	gtk+3 >= 3.22.0
+Requires:	gtk-webkit4.1
 Requires:	gtksourceview4 >= 4.0.3
 Requires:	harfbuzz >= 0.9.9
 Obsoletes:	sushi-devel < 3.6.0
