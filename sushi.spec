@@ -2,7 +2,7 @@ Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
 Version:	44.2
-Release:	1
+Release:	2
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/sushi/44/%{name}-%{version}.tar.xz
@@ -58,6 +58,9 @@ GNOME.
 rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
+
+# not supported by glibc (as of 2.37)
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{name}
 
