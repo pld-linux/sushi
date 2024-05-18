@@ -1,12 +1,12 @@
 Summary:	A quick previewer for Nautilus
 Summary(pl.UTF-8):	Szybki podgląd dla Nautilusa
 Name:		sushi
-Version:	45.0
+Version:	46.0
 Release:	1
 License:	GPL v2+ with GStreamer plugins exception
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/sushi/45/%{name}-%{version}.tar.xz
-# Source0-md5:	556d3aa2e8c69b8da3b0cf672546869b
+Source0:	https://download.gnome.org/sources/sushi/46/%{name}-%{version}.tar.xz
+# Source0-md5:	2a1ed53486bcb934c6f67e239b701b58
 URL:		https://wiki.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	evince-devel >= 3.2.0
 BuildRequires:	freetype-devel >= 2
@@ -22,7 +22,7 @@ BuildRequires:	gtk-webkit4.1-devel >= 2.34
 BuildRequires:	gtksourceview4-devel >= 4.0.3
 BuildRequires:	harfbuzz-devel >= 0.9.9
 BuildRequires:	libepoxy-devel
-BuildRequires:	meson >= 0.47.0
+BuildRequires:	meson >= 0.58.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rpmbuild(macros) >= 1.736
